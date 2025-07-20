@@ -4,7 +4,7 @@
 
 This plugin allows you to quickly insert videos hosted on [Panda Video](https://www.pandavideo.com.br) into any Moodle content area (labels, pages, books, forums, etc.) using the Moodle editor’s media icon.
 
-> ⚠️ **This plugin requires the [mod\_pandavideo](https://github.com/seuusuario/mod_pandavideo) plugin to be installed and configured.**
+> ⚠️ **This plugin requires the [mod_pandavideo](https://github.com/panda-moodle/mod_pandavideo) plugin to be installed and configured.**
 
 ## Features
 
@@ -23,6 +23,6 @@ and enable the **Panda Video Filter Player**.
 ## How to use
 
 1. Copy the Panda Video link in the following format:
-   [https://dashboard.pandavideo.com.br/#/videos/VIDEO\_ID](https://dashboard.pandavideo.com.br/#/videos/VIDEO_ID)
+   [https://dashboard.pandavideo.com.br/#/videos/VIDEO_ID](https://dashboard.pandavideo.com.br/#/videos/VIDEO_ID)
 2. Paste the link into any Moodle text editor using the **media button** or directly into the content.
 3. The plugin will automatically detect and embed the video player.
