@@ -34,7 +34,6 @@ class media_pandavideo_plugin extends core_media_player_external {
      *
      * @param array $urls
      * @param array $options
-     *
      * @return array
      */
     public function list_supported_urls(array $urls, array $options = []) {
@@ -57,23 +56,19 @@ class media_pandavideo_plugin extends core_media_player_external {
      * @param int $width
      * @param int $height
      * @param array $options
-     *
      * @return string
+     * @throws Exception
      */
     protected function embed_external(moodle_url $url, $name, $width, $height, $options) {
-        if ($url->get_host() == "dashboard.pandavideo.com.br" && pandarepository::get_video_id($url->get_encoded_anchor())) {
-            return pandarepository::getplayer($url->get_encoded_anchor());
-        }
-
-        return null;
+        return pandarepository::getplayer($options["originaltext"]);
     }
 
     /**
      * Supports Text.
      *
      * @param array $usedextensions
-     *
      * @return mixed|string
+     * @throws Exception
      */
     public function supports($usedextensions = []) {
         return get_string("support_pandavideo", "media_pandavideo");
