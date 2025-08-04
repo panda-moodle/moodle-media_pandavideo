@@ -23,7 +23,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-use mod_pandavideo\panda\repository as pandarepository;
+use mod_pandavideo\panda\repository;
 
 /**
  * Class media_pandavideo_plugin
@@ -60,14 +60,14 @@ class media_pandavideo_plugin extends core_media_player_external {
      * @throws Exception
      */
     protected function embed_external(moodle_url $url, $name, $width, $height, $options) {
-        return pandarepository::getplayer($options["originaltext"]);
+        return repository::getplayer($options["originaltext"]);
     }
 
     /**
      * Supports Text.
      *
      * @param array $usedextensions
-     * @return mixed|string
+     * @return string
      * @throws Exception
      */
     public function supports($usedextensions = []) {
@@ -80,10 +80,7 @@ class media_pandavideo_plugin extends core_media_player_external {
      * @return array
      */
     public function get_embeddable_markers() {
-        $markers = [
-            "dashboard.pandavideo.com.br",
-        ];
-
+        $markers = ["dashboard.pandavideo.com.br"];
         return $markers;
     }
 
