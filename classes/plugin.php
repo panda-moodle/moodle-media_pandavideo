@@ -23,7 +23,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-use mod_pandavideo\panda\repository;
+use repository_pandavideo\pandarepository;
 
 /**
  * Class media_pandavideo_plugin
@@ -60,7 +60,7 @@ class media_pandavideo_plugin extends core_media_player_external {
      * @throws Exception
      */
     protected function embed_external(moodle_url $url, $name, $width, $height, $options) {
-        return repository::getplayer($options["originaltext"]);
+        return pandarepository::getplayer($options["originaltext"]);
     }
 
     /**
