@@ -43,6 +43,9 @@ class media_pandavideo_plugin extends core_media_player_external {
             if ($url->get_host() === "dashboard.pandavideo.com.br") {
                 $result[] = $url;
             }
+            if (str_ends_with($url->get_host(), "tv.pandavideo.com.br")) {
+                $result[] = $url;
+            }
         }
 
         return $result;
@@ -80,7 +83,10 @@ class media_pandavideo_plugin extends core_media_player_external {
      * @return array
      */
     public function get_embeddable_markers() {
-        $markers = ["dashboard.pandavideo.com.br"];
+        $markers = [
+            "dashboard.pandavideo.com.br",
+            "player-vz.*.tv.pandavideo.com.br",
+        ];
         return $markers;
     }
 
